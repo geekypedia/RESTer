@@ -12,7 +12,7 @@ app.controller('authController', function($scope, $rootScope, $http, $location, 
 					var email = adalAuthenticationService.userInfo.userName;
 					$http.get(H.S.baseUrl + '/sso/validate?ssoid=' + email)
 						.then(function(r) {
-							$scope.authMessage = 'Found existing user session on healthtechindia.com. Logging in ...';
+							$scope.authMessage = 'Found existing user session on yourdomain.com. Logging in ...';
 							var data = r.data;
 							if (data && data.user) {
 								$rootScope.currentUser = data.user;
@@ -33,8 +33,8 @@ app.controller('authController', function($scope, $rootScope, $http, $location, 
 										},
 										employee: {
 											email: adalAuthenticationService.userInfo.userName,
-											username: adalAuthenticationService.userInfo.userName.replace('@healthtechindia.com', ''),
-											fullname: adalAuthenticationService.userInfo.userName.replace('.', ' ').replace('@healthtechindia.com', '')
+											username: adalAuthenticationService.userInfo.userName.replace('@yourdomain.com', ''),
+											fullname: adalAuthenticationService.userInfo.userName.replace('.', ' ').replace('@yourdomain.com', '')
 										}
 									};
 								}
