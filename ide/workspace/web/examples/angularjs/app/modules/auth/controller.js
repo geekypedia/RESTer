@@ -7,7 +7,7 @@ app.controller('authController', function($scope, $rootScope, $http, $location, 
 		if (S.office365) {
 			if (adalAuthenticationService.userInfo && adalAuthenticationService.userInfo.isAuthenticated) {
 				if (!$rootScope.potentialEmployee) {
-					$scope.authMessage = 'Found existing user session on healthtechindia.com. Validating ...';
+					$scope.authMessage = 'Found existing user session on yourdomain.com. Validating ...';
 
 					var email = adalAuthenticationService.userInfo.userName;
 					$http.get(H.S.baseUrl + '/sso/validate?ssoid=' + email)
