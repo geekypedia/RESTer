@@ -1,10 +1,11 @@
 /*global app*/
-app.controller('authController', function($scope, $rootScope, $http, $location, $cookies, loginEventService, H, R, M, S, adalAuthenticationService, $window) {
+app.controller('authController', function($scope, $rootScope, $http, $location, $cookies, $injector, loginEventService, H, R, M, S, $window) {
 	if($rootScope.currentUser){
 		//$location.path('/');
 	} else {
 		//Office 365
 		if (S.office365) {
+            var adalAuthenticationService = $injector.get('adalAuthenticationService');
 			if (adalAuthenticationService.userInfo && adalAuthenticationService.userInfo.isAuthenticated) {
 				if (!$rootScope.potentialEmployee) {
 					$scope.authMessage = 'Found existing user session on yourdomain.com. Validating ...';
