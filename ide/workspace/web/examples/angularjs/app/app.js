@@ -4,6 +4,8 @@ var app = angular.module('app', [
 							'ngRoute', 
 							'ngResource', 
 							'ngCookies', 
+							'ngAnimate', 
+							'ngSanitize',     
 							'ui.grid', 
 							'ui.grid.resizeColumns', 
 							'ui.grid.moveColumns', 
