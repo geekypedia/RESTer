@@ -18,5 +18,5 @@ var app = angular.module('app', [
 							'angular-md5',
 							'zingchart-angularjs',
 							'720kb.datepicker',
-                            'AdalAngular'
+                            //'AdalAngular'
 							]);

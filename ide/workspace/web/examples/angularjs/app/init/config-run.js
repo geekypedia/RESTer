@@ -66,7 +66,15 @@ app.provider('customRoutes', function() {
 });
 
 
-app.config(async function($routeProvider, $resourceProvider, $httpProvider, $controllerProvider, customRoutesProvider, adalAuthenticationServiceProvider, $locationProvider) {
+app.config(async function(
+                              $routeProvider, 
+                              $resourceProvider, 
+                              $httpProvider, 
+                              $controllerProvider, 
+                              $locationProvider,
+                              customRoutesProvider, 
+                             //adalAuthenticationServiceProvider, 
+                         ) {
 		var routes = customRoutesProvider.routes.customRoutes;
 		var existingRoutes = routes.map(function(p) {
 			return p.route;
