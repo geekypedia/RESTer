@@ -7,6 +7,7 @@ class Settings{
 		"supportEmail": "support@prestigeframework.com",
 		"enableSaaS": true,
 		"openRegistration": true,
+		"openApp": false,
 		"legacyMode": false,
 		"theme": {
 			background: "primary",
