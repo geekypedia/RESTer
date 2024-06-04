@@ -282,6 +282,9 @@ app.run(function($rootScope, $location, $cookies, H) {
 				if(locationPath.endsWith('/')){
 					locationPath = locationPath.substr(0, locationPath.length - 1);
 				}
+                if(locationPath == ''){
+                    locationPath = '/';
+                }
 
 				if ($rootScope.openRoutes.indexOf(locationPath) > -1) {} else {
 						$rootScope.lastLocation = locationPath;                    
@@ -307,15 +310,17 @@ app.run(function($rootScope, $location, $cookies, H) {
 	});
 
 	$rootScope.$on("loginRequired", function(event, next, current) {
-		// GLOBALS.registry.sideNavStatus = false;
-		// $('.all-nav').hide(); //CUSTOM
-		// $('.menu-static').show();
-  //      $('.menu-loading').hide();
-		GLOBALS.methods.logout();
-        
-		$cookies.remove(H.getCookieKey());
-		delete $rootScope.currentUser;
-		$location.path('/sign-in');
+        if(!H.S.openApp){
+            // GLOBALS.registry.sideNavStatus = false;
+            // $('.all-nav').hide(); //CUSTOM
+            // $('.menu-static').show();
+            // $('.menu-loading').hide();
+    		GLOBALS.methods.logout();
+            
+    		$cookies.remove(H.getCookieKey());
+    		delete $rootScope.currentUser;
+    		$location.path('/sign-in');
+        }
 	});
 
 	$rootScope.$on("outOfService", function(event, next, current) {
