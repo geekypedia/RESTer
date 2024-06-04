@@ -30,6 +30,9 @@ body{
 	margin-bottom: -20px;
 }
 
+.right-nav{
+	margin-left: auto;	
+}
 
 nav.breadcrumb-nav{
 	margin: -10px;
