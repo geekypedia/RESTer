@@ -10,10 +10,10 @@ class Settings{
 		"openApp": false,
 		"legacyMode": false,
 		"theme": {
-			background: "primary",
-			color: "white",
-			alternate: "dodgerblue",
-			contrast: "black"            
+			"background": "primary",
+			"color": "white",
+			"alternate": "dodgerblue",
+			"contrast": "black"            
 		},
 		"menu": "expand", //expand or overlap,
 		"autoMasters": false,
