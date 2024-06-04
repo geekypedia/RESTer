@@ -287,8 +287,10 @@ app.run(function($rootScope, $location, $cookies, H) {
                 }
 
 				if ($rootScope.openRoutes.indexOf(locationPath) > -1) {} else {
+                    if(!H.S.openApp){
 						$rootScope.lastLocation = locationPath;                    
 						$location.path('/sign-in');	
+                    }
 				}
 			} else {
 				var cu = JSON.parse(cookie);
